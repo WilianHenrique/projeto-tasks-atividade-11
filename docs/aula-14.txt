@@ -1,0 +1,11 @@
+#edição de tarefa
+
+1) Capturar o id da tarefa; OK
+
+2) Buscar no sgbd os dados da tarefa; OK
+ 
+3) Preencher o formulário de edição; OK
+
+4) Formulário de edição envia os dados para action update; OK
+
+5) action update vai fazer o update no banco e redirecionar para index com o resultado da operação; OK

@@ -1,0 +1,95 @@
+<form method="POST" action="<?=$this->view->form->getAction()?>">
+	<!--ID/id-->
+	<input 
+		type="hidden"
+		id="id"
+		name="id"
+		value="<?=$this->view->taskEdit['ID'] ?? '';?>"
+	/>
+	<!--Nome/Name-->
+	<input type="text" 
+		name="name" 
+		id="name" 
+		placeholder="Nome da tarefa" 
+		value="<?=$this->view->taskEdit['name'] ?? '';?>"
+	/>
+	<br />
+	<!--Descricao/Description-->
+	<input type="text" 
+		name="description" 
+		id="description" 
+		placeholder="Descrição da tarefa" 
+		value="<?=$this->view->taskEdit['description'] ?? '';?>"
+	/>
+	<br />
+	<!--Prazo/Due-->
+	<input type="date" 
+		name="due" 
+		id="due" 
+		placeholder="Prazo" 
+		value="<?=$this->view->taskEdit['due'] ?? '';?>"
+	/>
+	<br />
+	<!--Prioridade/Priority-->
+	<input 
+		type="radio" 
+		name="priority" 
+		id="low" 
+		value="low" 
+		<?=(isset($this->view->taskEdit) && 
+			$this->view->taskEdit['priority'] == 'low') ?
+			'checked' :
+			'';
+		?>
+	/>
+	<label for="low">Baixa</label>
+	
+	<input 
+		type="radio" 
+		name="priority" 
+		id="medium" 
+		value="medium" 
+		<?=(isset($this->view->taskEdit) && 
+			$this->view->taskEdit['priority'] == 'medium') ?
+			'checked' :
+			'';
+		?>
+	/>
+	<label for="medium">Média</label>
+	
+	<input 
+		type="radio" 
+		name="priority" 
+		id="high" 
+		value="high" 
+		<?=(isset($this->view->taskEdit) && 
+			$this->view->taskEdit['priority'] == 'high') ?
+			'checked' :
+			'';
+		?>
+	/>
+	<label for="high">Alta</label>
+	<br />
+	
+	<!--Finalizada/Finished-->
+	<input type="checkbox" 
+		name="finished" 
+		id="finished" 
+		value="1"
+		<?=(isset($this->view->taskEdit) && 
+			$this->view->taskEdit['finished'] == 1) ?
+			'checked' :
+			'';
+		?> 
+	/>
+	<label for="finished">Finalizada</label>
+	<br />
+	
+	<!--Botão Salvar/Salvar-->
+	<input 
+		type="submit" 
+		name="<?=$this->view->form->getActionButton()?>" 
+		id="<?=$this->view->form->getActionButton()?>" 
+		value="<?=$this->view->form->getActionButtonText()?>" 
+	/>
+</form>

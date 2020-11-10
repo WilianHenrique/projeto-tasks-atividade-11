@@ -1,0 +1,34 @@
+<div class="table-responsive">
+	<table class="table table-hover table-sm">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th>Prazo</th>
+				<th>Prioridade</th>
+				<th>Finalizada</th>
+				<th>Editar</th>
+				<th>Apagar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($this->view->taskList as $taskItem):?>
+				<tr>
+					<td><?=$taskItem['ID']?></td>
+					<td><?=$taskItem['name']?></td>
+					<td><?=$taskItem['description']?></td>
+					<td><?=$taskItem['due']?></td>
+					<td><?=$taskItem['priority']?></td>
+					<td><?=$taskItem['finished']?></td>
+					<td>
+					    <a href="/edit/<?=$taskItem['ID']?>" class="btn btn-warning btn-sm">Editar</a>
+					</td>
+					<td>
+						<a href="/delete/<?=$taskItem['ID']?>" class="btn btn-danger btn-sm">Apagar</a>
+					</td>
+				</tr>
+			<?php endforeach;?>
+		</tbody>
+	</table>
+</div>
